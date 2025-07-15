@@ -49,7 +49,6 @@ if menu == "Add Campaign":
         submitted = st.form_submit_button("Add")
         if submitted:
             new_row = pd.DataFrame([[name, stage, tactics, status, budget, roi, start, end, notes]], columns=df.columns)
-            global df
             df = pd.concat([df, new_row], ignore_index=True)
             save_data()
             st.success("Campaign added!")
